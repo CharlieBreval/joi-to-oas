@@ -1,0 +1,50 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "This service is made to get information coming from a restaurant",
+    "version": "1.0.0",
+    "title": "restaurant-service"
+  },
+  "servers": [
+    { "url": "https://ginko.preprod.thefork.io", "description": "preprod url" },
+    { "url": "https://biloba.thefork.io", "description": "production url" }
+  ],
+  "paths": {
+    "/thisismyroute": {
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version"
+                  },
+                  "id": {
+                    "type": "string",
+                    "default": "999",
+                    "description": "Id of the request"
+                  },
+                  "method": {
+                    "type": "string",
+                    "default": "post",
+                    "description": "The JsonRpcMethodName"
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "integer", "default": 1884 }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

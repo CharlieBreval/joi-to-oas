@@ -1,0 +1,18 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "This service is made to get information coming from a restaurant",
+    "version": "1.0.0",
+    "title": "restaurant-service"
+  },
+  "servers": [
+    {
+      "url": "https://ginko.preprod.thefork.io",
+      "description": "preprod url"
+    },
+    {
+      "url": "https://biloba.thefork.io",
+      "description": "production url"
+    }
+  ]
+}

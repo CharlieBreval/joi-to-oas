@@ -1,0 +1,150 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "This service is made to get information coming from a restaurant",
+    "version": "1.0.0",
+    "title": "restaurant-service"
+  },
+  "servers": [
+    {
+      "url": "https://restaurant-service.preprod.thefork.io"
+    }
+  ],
+  "paths": {
+    "/getRestaurantByUuid/../json-rpc": {
+      "post": {
+        "description": "Get a restaurant using its uuid",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0"
+                  },
+                  "id": {
+                    "type": "string",
+                    "default": "rzerz"
+                  },
+                  "method": {
+                    "type": "string",
+                    "default": "getRestaurantByUuid"
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "restaurantUuid": {
+                        "type": "string",
+                        "default": "2b2ed104-a473-4798-a8a1-3e30931745ce"
+                      },
+                      "embed": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "default": "erbCredentials"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/getRestaurantConfiguration/../json-rpc": {
+      "post": {
+        "description": "Get a restaurant configuration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "id": {
+                    "type": "string",
+                    "default": "rzerz"
+                  },
+                  "method": {
+                    "type": "string",
+                    "default": "getRestaurantConfiguration"
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "restaurantUuid": {
+                        "type": "string",
+                        "default": "2b2ed104-a473-4798-a8a1-3e30931745ce"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/getRestaurant/../json-rpc": {
+      "post": {
+        "description": "Get a restaurant",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "jsonrpc": {
+                    "type": "string",
+                    "default": "2.0",
+                    "description": "JSON-RPC Version (2.0)"
+                  },
+                  "id": {
+                    "type": "string",
+                    "default": "rzerz"
+                  },
+                  "method": {
+                    "type": "string",
+                    "default": "getRestaurant"
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "default": 1884
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    }
+  }
+}
