@@ -1,2 +1,2 @@
 # joi-to-oas
-We have joi schema and we want oas file
+We have joi schema as json and we want oas file
